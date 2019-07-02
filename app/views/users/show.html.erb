@@ -5,7 +5,7 @@
       has <%= @user.dreams.length %> dreams.
     </div>
     <div vlass="user-top__right">
-      円グラフ
+      <%= pie_chart @chart %>
     </div>
   </div>
   <% if @user == current_user %>
