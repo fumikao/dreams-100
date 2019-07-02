@@ -8,14 +8,17 @@
       円グラフ
     </div>
   </div>
-  <%= form_for @dream do |f| %>
-    <div class="form">
-      <%= f.text_field :content, placeholder: "What's your dream?" %>
-      <%= f.check_box :opened %>
-      <%= f.label :公開 %>
-      <%= f.submit :send %>
-    </div>
+  <% if @user == current_user %>
+    <%= form_for @dream do |f| %>
+      <div class="form">
+        <%= f.text_field :content, placeholder: "What's your dream?" %>
+        <%= f.check_box :opened %>
+        <%= f.label :公開 %>
+        <%= f.submit :send %>
+      </div>
+    <% end %>
   <% end %>
+
   <div class="lists">
     <%= render partial: 'dream', collection: @dreams %>
   </div>
