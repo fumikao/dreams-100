@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="user-top">
+    <div class="user-top__left">
+      <%= @user.name %>
+      has <%= @user.dreams.length %> dreams.
+    </div>
+    <div vlass="user-top__right">
+      <%= pie_chart @chart %>
+    </div>
+  </div>
+  <% if @user == current_user %>
+    <%= form_for @dream do |f| %>
+      <div class="form">
+        <%= f.text_field :content, placeholder: "What's your dream?" %>
+        <%= f.check_box :opened, {checked: "checked"} %>
+        <%= f.label :公開 %>
+        <%= f.submit :send %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="lists">
+    <%= render partial: 'dream', collection: @dreams %>
+  </div>
+</div>

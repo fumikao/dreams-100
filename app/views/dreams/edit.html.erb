@@ -1,0 +1,9 @@
+<%= form_for @dream do |f| %>
+  <div class="form">
+    <%= f.select :status, [["未実施", 0], ["実施中", 1], ["達成！", 2]] %>
+    <%= f.text_field :content, placeholder: @dream.content %>
+    <%= f.check_box :opened, {checked: "checked"} %>
+    <%= f.label :公開 %>
+    <%= f.submit :send %>
+  </div>
+<% end %>
