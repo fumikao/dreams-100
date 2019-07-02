@@ -12,7 +12,7 @@
     <%= form_for @dream do |f| %>
       <div class="form">
         <%= f.text_field :content, placeholder: "What's your dream?" %>
-        <%= f.check_box :opened %>
+        <%= f.check_box :opened, {checked: "checked"} %>
         <%= f.label :公開 %>
         <%= f.submit :send %>
       </div>

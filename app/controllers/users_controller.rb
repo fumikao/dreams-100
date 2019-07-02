@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @dream = @user.dreams.new
+    @dream = Dream.new
     if @user == current_user
       @dreams = @user.dreams
     else
