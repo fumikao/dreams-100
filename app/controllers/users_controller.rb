@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     else
       @dreams = @user.dreams.where(opened: true)
     end
+    
     @chart = [
       ["未実施", @user.dreams.where(status: 0).length],
       ["実施中", @user.dreams.where(status: 1).length],
