@@ -14,85 +14,88 @@
  *= require_self
  */
 
-.header {
-  box-sizing: border-box;
-  font-family: 'Noto Serif JP', serif;
-  color: white;
-  letter-spacing: 2px;
-  background-color: black;
-  width: 100vw;
-  height: 50px;
-  a {
-    color: white;
-    text-decoration: none;
-    &:hover {
-      background-color: white;
-      opacity: 0.6;
-      color: black;
-    }
-  }
-  .title {
-    float: left;
-    line-height: 30px;
-    margin-left: 20px;
-    font-weight: bold;
-    padding: 10px 20px;
-  }
-  ul {
-    float: right;
-    margin: 0;
-    li {
-      float: left;
-      list-style: none;
-      line-height: 30px;
-      a {
-        padding: 10px 20px; 
-        display: block;
-      }
-      &:last-child {
-        margin-right: 60px;
-      }
-    }
-  }
-}
-
-.contents {
-  box-sizing: border-box;
-  font-family: 'Noto Serif JP', serif;
-  color: white;
-  background-image: url("/images/yellowknife.jpeg");
-  background-size: cover;
-  width: 100vw;
-  height: calc(100vh - 50px);
-  padding: 50px;
-  text-align: right;
-  h1 {
-    font-size: 50px;
-    letter-spacing: 10px;
-    margin-bottom: 70px;
-  }
-  p {
-    line-height: 40px;
-    margin-bottom: 70px;
-    margin-right: 20px;
-    span {
-      font-size: 30px;
-      font-weight: bold;
-    }
-  }
-  a {
-    text-decoration: none;
-    color: white;
-    letter-spacing: 3px;
-    font-weight: bold;
-    border: 2px solid white;
-    border-radius: 50%;
-    padding: 20px;
-    margin-right: 30px;
-    &:hover {
-      background-color: white;
-      opacity: 0.6;
-      color: black;
-    }
-  }
-}
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ 
+ .header {
+   box-sizing: border-box;
+   font-family: 'Noto Serif JP', serif;
+   color: white;
+   letter-spacing: 2px;
+   background-color: black;
+   width: 100vw;
+   height: 50px;
+   a {
+     color: white;
+     text-decoration: none;
+     &:hover {
+       background-color: white;
+       opacity: 0.6;
+       color: black;
+     }
+   }
+   .title {
+     float: left;
+     line-height: 30px;
+     margin-left: 20px;
+     font-weight: bold;
+     padding: 10px 20px;
+   }
+   ul {
+     float: right;
+     margin: 0;
+     li {
+       float: left;
+       list-style: none;
+       line-height: 30px;
+       a {
+         padding: 10px 20px; 
+         display: block;
+       }
+       &:last-child {
+         margin-right: 60px;
+       }
+     }
+   }
+ }
+ 
+ .contents {
+   box-sizing: border-box;
+   font-family: 'Noto Serif JP', serif;
+   color: white;
+   background-image: url("/images/yellowknife.jpeg");
+   background-size: cover;
+   width: 100vw;
+   height: calc(100vh - 50px);
+   padding: 50px;
+   text-align: right;
+   h1 {
+     font-size: 50px;
+     letter-spacing: 10px;
+     margin-bottom: 70px;
+   }
+   p {
+     line-height: 40px;
+     margin-bottom: 70px;
+     margin-right: 20px;
+     span {
+       font-size: 30px;
+       font-weight: bold;
+     }
+   }
+   a {
+     text-decoration: none;
+     color: white;
+     letter-spacing: 3px;
+     font-weight: bold;
+     border: 2px solid white;
+     border-radius: 50%;
+     padding: 20px;
+     margin-right: 30px;
+     &:hover {
+       background-color: white;
+       opacity: 0.6;
+       color: black;
+     }
+   }
+ }
