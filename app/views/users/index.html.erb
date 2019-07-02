@@ -1,0 +1,7 @@
+<input type="text", placeholder="search user">
+<% @users.each do |user| %>
+  <ul>
+    <li><%= link_to user.name, user_path(user) %> has <%= user.dreams.length %> dreams</li>
+  </ul>
+<% end %>
+<%= paginate(@users) %>
