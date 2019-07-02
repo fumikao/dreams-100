@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <div class="header">
+      <%= link_to "100DREAMS", root_path, class: "title" %>
+      <ul>
+        <li><%= link_to "LOG IN", new_user_session_path %></li>
+        <li><%= link_to "JOIN", new_user_registration_path %></li>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>
