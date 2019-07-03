@@ -18,6 +18,14 @@ $(function(){
     return html;
   }
 
+  function scrollDreams(){
+    var target = $('.item').last();
+    var position = target.offset().top + $('.lists').scrollTop();
+    $('.lists').animate({
+      scrollTop: position
+    }, 1000, 'swing')
+  }
+
   $('#new_dream').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
@@ -34,6 +42,7 @@ $(function(){
       let html = buildHTML(data);
       $('#dreams_list').append(html);
       $('#new_dream')[0].reset();
+      scrollDreams();
     })
     .fail(function(){
       alert('dreamを入力してください')

@@ -105,6 +105,7 @@
  .container {
    margin: 50px;
    padding-top: 30px;
+   height: 100vh;
  }
 
  .color-white {
@@ -114,6 +115,7 @@
  .user-top {
    display: flex;
    justify-content: space-around;
+   height: 300px;
   &__left-name {
     margin-bottom: 30px;
   }
@@ -125,4 +127,10 @@
 
 .opened {
   margin: 0 20px;
+}
+
+.lists {
+  width: 100%;
+  height: calc(100vh - 350px);
+  overflow: scroll;
 }
