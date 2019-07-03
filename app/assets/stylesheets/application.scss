@@ -27,34 +27,34 @@
    position: fixed;
    z-index: 10;
    top: 0;
-   a {
-     color: white;
-     text-decoration: none;
-     &:hover {
-       background-color: white;
-       opacity: 0.6;
-       color: black;
-     }
-   }
-   .title {
+   a:hover {
+    opacity: 0.6;
+  }
+  .title {
     //  height: 60px;
     //  margin: 0;
     //  padding: 0;
     //  border: white solid 1px;
-   }
-   ul {
-     float: right;
-     margin: 0;
-     li {
-       float: left;
-       list-style: none;
-       line-height: 40px;
-       a {
-         padding: 10px 20px; 
-         display: block;
-       }
+  }
+  ul {
+    float: right;
+    margin: 0;
+    li {
+      float: left;
+      list-style: none;
+      line-height: 40px;
+      a {
+        padding: 10px 20px; 
+        display: block;
+        color: white;
+        text-decoration: none;
+        &:hover {
+          background-color: white;
+          color: black;
+        }
+      }
        &:last-child {
-         margin-right: 60px;
+         margin-right: 20px;
        }
      }
    }
@@ -66,9 +66,10 @@
    color: white;
    background-image: url("/images/yellowknife.jpeg");
    background-size: cover;
+   background-attachment: fixed;
    width: 100vw;
-   height: calc(100vh - 50px);
-   padding: 50px;
+   height: 100vh;
+   padding: 110px 50px 50px;
    text-align: right;
    h1 {
      font-size: 50px;
