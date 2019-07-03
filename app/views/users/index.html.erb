@@ -1,6 +1,14 @@
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.name, user_path(user) %> has <%= user.dreams.length %> dreams</li>
-  <% end %>
-</ul>
-<%= paginate(@users) %>
+<div class="container">
+  <h4>ユーザー</h4>
+  <ul class="collection with-header">
+    <% @users.each do |user| %>
+      <li class="collection-item">
+        <%= link_to user_path(user), class: "secondary-content" do %>
+          <i class="material-icons">person</i>
+        <% end %>
+        <%= user.name %> has <%= user.dreams.length %> dreams.
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate(@users) %>
+</div>
