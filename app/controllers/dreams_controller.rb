@@ -6,11 +6,8 @@ class DreamsController < ApplicationController
 
   def create
     dream = current_user.dreams.new(dream_params)
-    if dream.save
-      redirect_to user_path(current_user)
-    else
-      render user_path(current_user)
-    end
+    dream.save
+    redirect_to user_path(current_user)
   end
 
   def edit
