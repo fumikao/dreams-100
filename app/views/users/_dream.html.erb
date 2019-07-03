@@ -1,9 +1,19 @@
-<p>
-  <%= dream.status %>
-  <%= dream.content %>
-  <%= dream.opened %>
-  <% if user_signed_in? && dream.user == current_user %>
-    <%= link_to "編集", "/dreams/#{dream.id}/edit" %>        
-    <%= link_to "削除", "/dreams/#{dream.id}", method: :delete %>
-  <% end %>
-</p>
+<table border="1">
+  <tr>
+    <td>
+      <%= dream.status %>
+    </td>
+    <td>
+      <%= dream.content %>
+    </td>
+    <td>
+      <%= dream.opened %>
+    </td>
+    <% if user_signed_in? && dream.user == current_user %>
+      <td>
+        <%= link_to "編集", "/dreams/#{dream.id}/edit" %>        
+        <%= link_to "削除", "/dreams/#{dream.id}", method: :delete %>
+      </td>
+    <% end %>
+  </tr>
+</table>

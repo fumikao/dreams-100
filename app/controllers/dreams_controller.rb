@@ -5,9 +5,16 @@ class DreamsController < ApplicationController
   end
 
   def create
-    dream = current_user.dreams.new(dream_params)
-    dream.save
-    redirect_to user_path(current_user)
+    @dream = current_user.dreams.new(dream_params)
+    if @dream.save
+      respond_to do |format|
+        # format.html { redirect_to user_path(current_user) }
+        format.json
+      end
+    else
+      flash[:alert] = '送信に失敗しました'
+      render 'users/show'
+    end
   end
 
   def edit
