@@ -1,6 +1,8 @@
 class Dream < ApplicationRecord
   belongs_to :user
 
+  validates :content, presence: :true
+
   enum status: {
     "未実施": "0",
     "実施中": "1",
