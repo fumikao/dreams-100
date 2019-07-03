@@ -8,7 +8,7 @@ class DreamsController < ApplicationController
     @dream = current_user.dreams.new(dream_params)
     if @dream.save
       respond_to do |format|
-        # format.html { redirect_to user_path(current_user) }
+        format.html { redirect_to user_path(current_user) }
         format.json
       end
     else
@@ -36,8 +36,14 @@ class DreamsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def sort
+    dream = Dream.find(params[:dream_id])
+    fruit.update!(dream_params)
+    render nothing: true
+  end
+
   private
   def dream_params
-    params.require(:dream).permit(:content, :opened, :status)
+    params.require(:dream).permit(:content, :opened, :status, :row_order_position)
   end
 end

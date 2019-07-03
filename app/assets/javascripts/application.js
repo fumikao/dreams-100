@@ -12,9 +12,9 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery3
 //= require materialize
 //= require Chart.bundle
 //= require chartkick
+//= require jquery-ui/widgets/sortable
 //= require_tree .
