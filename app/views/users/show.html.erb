@@ -2,14 +2,14 @@
   <div class="user-top">
     <div class="user-top__left">
       <div class="user-top__left-name">
-        <h4>
+        <h5>
           <% if user_signed_in? && @user == current_user%>
             <%= link_to @user.name, edit_user_registration_path %>
           <% else %>
             <%= @user.name %>
           <% end %>
-        </h4>
-        <h5>has <%= @user.dreams.length %> dreams.</h5>
+        </h5>
+        <h6>has <%= @user.dreams.length %> dreams.</h6>
       </div>
       <div class="user-top__left-form">
         <% if @user == current_user %>
@@ -33,22 +33,23 @@
       <%= pie_chart @chart, width: "100px", colors: ["#e0e0e0", "#a5d6a7", "#f06292"] %>
     </div>
   </div>
-  
-  <div class="lists">
-    <table class="highlight table-sortable">
-      <thead>
-        <tr>
-          <th>状況</th>
-          <th>内容</th>
-          <% if user_signed_in? && @user == current_user %>
-            <th>公開/非公開</th>
-            <th>only you</th>
-          <% end %>
-        </tr>
-      </thead>
-      <tbody id="dreams_list">
-        <%= render partial: 'dream', collection: @dreams %>
-      </tbody>
-    </table>
+  <div>
+    <div class="lists">
+      <table class="highlight table-sortable">
+        <thead>
+          <tr>
+            <th>状況</th>
+            <th>内容</th>
+            <% if user_signed_in? && @user == current_user %>
+              <th>公開/非公開</th>
+              <th>only you</th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody id="dreams_list">
+          <%= render partial: 'dream', collection: @dreams %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
