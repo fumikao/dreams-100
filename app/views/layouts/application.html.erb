@@ -8,18 +8,23 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body>
     <div class="header">
       <% if user_signed_in? %>
-        <%= link_to "100DREAMS", user_path(current_user), class: "title" %>
+        <%= link_to user_path(current_user), class: "title" do %>
+          <%= image_tag "/images/100dreams-logo-white.png", size: "80x60" %>
+        <% end %>
         <ul>
           <li><%= link_to "USERS", users_path %></li>
           <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>
         </ul>
       <% else %>
-        <%= link_to "100DREAMS", root_path, class: "title" %>
+        <%= link_to root_path, class: "title" do %>
+          <%= image_tag "/images/100dreams-logo-white.png", size: "80x61" %>
+        <% end %>
         <ul>
           <li><%= link_to "LOG IN", new_user_session_path %></li>
           <li><%= link_to "JOIN", new_user_registration_path %></li>
