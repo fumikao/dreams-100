@@ -1,14 +1,12 @@
 $(function(){
   function buildHTML(dream){
-    let html = `<table border="1">
-                  <tbody>
-                    <tr>
-                    <td>
-                      ${dream.status}
-                    </td>
-                    <td>
-                      ${dream.content}
-                    </td>
+    let html = `<tr>
+                  <td>
+                    ${dream.status}
+                  </td>
+                  <td>
+                    ${dream.content}
+                  </td>
                     <td>
                       ${dream.opened}
                     </td>
@@ -16,9 +14,7 @@ $(function(){
                       <a href="/dreams/${dream.id}/edit">編集</a>        
                       <a rel="nofollow" data-method="delete" href="/dreams/${dream.id}">削除</a>
                     </td>
-                    </tr>
-                  </tbody>
-                </table>`
+                  </tr>`
     return html;
   }
 

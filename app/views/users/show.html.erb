@@ -28,7 +28,7 @@
     </div>
   </div>
   
-  <div class="lists" id="dreams_list">
+  <div class="lists">
     <table class="highlight">
       <thead>
         <tr>
@@ -40,7 +40,7 @@
           <% end %>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="dreams_list">
         <%= render partial: 'dream', collection: @dreams %>
       </tbody>
     </table>
