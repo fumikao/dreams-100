@@ -1,26 +1,48 @@
 <div class="container">
   <div class="user-top">
     <div class="user-top__left">
-      <%= @user.name %>
-      has <%= @user.dreams.length %> dreams.
+      <div class="user-top__left-name">
+        <h4><%= @user.name %></h4>
+        <h5>has <%= @user.dreams.length %> dreams.</h5>
+      </div>
+      <div class="user-top__left-form">
+        <% if @user == current_user %>
+          <%= form_for @dream do |f| %>
+            <div class="form">
+              <%= f.text_field :content, placeholder: "What's your dream?", class: "input-field col s6" %>
+              <%= f.select :status, [["未実施", "0"], ["実施中", "1"], ["達成！", "2"]] %>
+              <div>
+                <label>
+                  <%= f.check_box :opened, {checked: true, checked_value: "1", unchecked_value: "0"} %>
+                  <span><%= f.label :公開 %></span>
+                </label>
+              </div>
+              <%= f.submit :send, class: "waves-effect waves-light btn-small" %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     </div>
-    <div vlass="user-top__right">
-      <%= pie_chart @chart %>
+    <div class="user-top__right">
+      <%= pie_chart @chart, width: "100px", colors: ["#e0e0e0", "#a5d6a7", "#f06292"] %>
     </div>
   </div>
-  <% if @user == current_user %>
-    <%= form_for @dream do |f| %>
-      <div class="form">
-        <%= f.select :status, [["未実施", "0"], ["実施中", "1"], ["達成！", "2"]] %>
-        <%= f.text_field :content, placeholder: "What's your dream?" %>
-        <%= f.check_box :opened, {checked: true, checked_value: "1", unchecked_value: "0"} %>
-        <%= f.label :公開 %>
-        <%= f.submit :send %>
-      </div>
-    <% end %>
-  <% end %>
-
+  
   <div class="lists" id="dreams_list">
-    <%= render partial: 'dream', collection: @dreams %>
+    <table class="highlight">
+      <thead>
+        <tr>
+          <th>状況</th>
+          <th>内容</th>
+          <% if user_signed_in? && @user == current_user %>
+            <th>公開/非公開</th>
+            <th>only you</th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'dream', collection: @dreams %>
+      </tbody>
+    </table>
   </div>
 </div>
