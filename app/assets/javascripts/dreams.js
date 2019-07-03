@@ -36,7 +36,7 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.lists').prepend(html);
+      $('#dreams_list').prepend(html);
       $('#new_dream')[0].reset();
     })
     .fail(function(){
