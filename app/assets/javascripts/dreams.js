@@ -36,9 +36,8 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.lists').append(html);
+      $('.lists').prepend(html);
       $('#new_dream')[0].reset();
-      // scrollMessages();
     })
     .fail(function(){
       alert('dreamを入力してください')
