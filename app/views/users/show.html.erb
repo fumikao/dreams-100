@@ -2,7 +2,13 @@
   <div class="user-top">
     <div class="user-top__left">
       <div class="user-top__left-name">
-        <h4><%= @user.name %></h4>
+        <h4>
+          <% if user_signed_in? && @user == current_user%>
+            <%= link_to @user.name, edit_user_registration_path %>
+          <% else %>
+            <%= @user.name %>
+          <% end %>
+        </h4>
         <h5>has <%= @user.dreams.length %> dreams.</h5>
       </div>
       <div class="user-top__left-form">
