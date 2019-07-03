@@ -32,7 +32,7 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('#dreams_list').prepend(html);
+      $('#dreams_list').append(html);
       $('#new_dream')[0].reset();
     })
     .fail(function(){

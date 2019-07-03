@@ -38,7 +38,7 @@ class DreamsController < ApplicationController
 
   def sort
     dream = Dream.find(params[:dream_id])
-    fruit.update!(dream_params)
+    dream.update(dream_params)
     render nothing: true
   end
 
