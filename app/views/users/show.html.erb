@@ -13,7 +13,7 @@
       <div class="form">
         <%= f.select :status, [["未実施", "0"], ["実施中", "1"], ["達成！", "2"]] %>
         <%= f.text_field :content, placeholder: "What's your dream?" %>
-        <%= f.check_box :opened, {checked: true} %>
+        <%= f.check_box :opened, {checked: true, checked_value: "1", unchecked_value: "0"} %>
         <%= f.label :公開 %>
         <%= f.submit :send %>
       </div>

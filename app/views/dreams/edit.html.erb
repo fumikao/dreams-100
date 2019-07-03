@@ -1,11 +1,9 @@
 <%= form_for @dream do |f| %>
   <div class="form">
-  <%= @dream.opened %>
-    <%= f.select :status, [["未実施", "未実施"], ["実施中", "実施中"], ["達成！", "達成！"]], selected: @dream.status %>
+    <%= f.select :status, [["未実施", 0], ["実施中", 1], ["達成！", 2]], selected: @dream.status_before_type_cast %>
     <%= f.text_field :content, placeholder: @dream.content %>
-    <%= f.check_box :opened %>
+    <%= f.check_box :opened, {}, "公開", "非公開" %>
     <%= f.label :公開 %>
     <%= f.submit :send %>
   </div>
 <% end %>
-
