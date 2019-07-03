@@ -63,8 +63,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'kaminari'
-gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem 'chartkick'
 gem 'chartable'
 gem 'rails-i18n'
+gem 'materialize-sass', '~> 1.0.0'
