@@ -1,17 +1,17 @@
-<tr>
-<td>
-  <%= dream.status %>
-</td>
-<td>
-  <%= dream.content %>
-</td>
-<% if user_signed_in? && dream.user == current_user %>
+<%= content_tag "tr", class: "item", data: { model_name: dream.class.name.underscore, update_url: dream_sort_path(dream)} do %>
   <td>
-    <%= dream.opened %>
+    <%= dream.status %>
   </td>
   <td>
-    <%= link_to "編集", "/dreams/#{dream.id}/edit" %>        
-    <%= link_to "削除", "/dreams/#{dream.id}", method: :delete %>
+    <%= dream.content %>
   </td>
+  <% if user_signed_in? && dream.user == current_user %>
+    <td>
+      <%= dream.opened %>
+    </td>
+    <td>
+      <%= link_to "編集", "/dreams/#{dream.id}/edit" %>        
+      <%= link_to "削除", "/dreams/#{dream.id}", method: :delete %>
+    </td>
+  <% end %>
 <% end %>
-</tr>

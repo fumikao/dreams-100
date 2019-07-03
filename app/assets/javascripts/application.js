@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require jquery3
+//= require rails-ujs
 //= require materialize
 //= require Chart.bundle
 //= require chartkick
+//= require jquery-ui/widgets/sortable
 //= require_tree .

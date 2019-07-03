@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'dreams#index'
   resources :users, only: [:index, :show]
-  resources :dreams
+  resources :dreams do
+    put :sort
+  end
 end
