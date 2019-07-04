@@ -31,9 +31,8 @@ class DreamsController < ApplicationController
   end
 
   def destroy
-    dream = Dream.find(params[:id])
-    dream.destroy
-    redirect_to user_path(current_user)
+    @dream = Dream.find(params[:id])
+    @dream.destroy
   end
 
   def sort

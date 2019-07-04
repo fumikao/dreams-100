@@ -1,4 +1,4 @@
-<%= content_tag "tr", class: "item", data: { model_name: dream.class.name.underscore, update_url: dream_sort_path(dream)} do %>
+<%= content_tag "tr", id: "dream-#{dream.id}", class: "item", data: { model_name: dream.class.name.underscore, update_url: dream_sort_path(dream)} do %>
   <td>
     <%= dream.status %>
   </td>
@@ -11,7 +11,7 @@
     </td>
     <td>
       <%= link_to "編集", "/dreams/#{dream.id}/edit" %>        
-      <%= link_to "削除", "/dreams/#{dream.id}", method: :delete %>
+      <%= link_to "削除", "/dreams/#{dream.id}", method: :delete, class: "delete_button", remote: true %>
     </td>
   <% end %>
 <% end %>
