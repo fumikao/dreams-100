@@ -142,10 +142,10 @@ ul {
 .user-top {
   display: flex;
   justify-content: space-around;
-  height: 300px;
-&__left-name {
-  margin-bottom: 30px;
-}
+  height: 250px;
+  &__right {
+    margin-top: 10px;
+  }
 }
 
 .new_dream {

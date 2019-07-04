@@ -8,8 +8,8 @@
           <% else %>
             <%= @user.name %>
           <% end %>
+          has <%= @user.dreams.length %> dreams.
         </h5>
-        <h6>has <%= @user.dreams.length %> dreams.</h6>
       </div>
       <div class="user-top__left-form">
         <% if @user == current_user %>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="user-top__right">
-      <%= pie_chart @chart, width: "100px", colors: ["#e0e0e0", "#a5d6a7", "#f06292"] %>
+      <%= pie_chart @chart, width: "300px", height: "200px", colors: ["#e0e0e0", "#a5d6a7", "#f06292"] %>
     </div>
   </div>
   <div>
