@@ -16,6 +16,10 @@
 
  @import "materialize";
  
+body {
+  height: 100vh;
+}
+
  .header {
    box-sizing: border-box;
    font-family: 'Noto Serif JP', serif;
@@ -103,9 +107,10 @@
  }
 
  .container {
-   margin: 50px;
-   padding-top: 30px;
-   height: 100vh;
+   padding: 60px 50px 50px;
+   height: 100%;
+   width: 100%;
+   position: fixed;
  }
 
  .color-white {
@@ -132,5 +137,6 @@
 .lists {
   width: 100%;
   height: calc(100vh - 350px);
+  padding-bottom: 50px;
   overflow: scroll;
 }
