@@ -20,127 +20,149 @@ body {
   height: 100vh;
 }
 
- .header {
-   box-sizing: border-box;
-   font-family: 'Noto Serif JP', serif;
-   color: white;
-   letter-spacing: 2px;
-   background-color: black;
-   width: 100vw;
-   height: 60px;
-   position: fixed;
-   z-index: 10;
-   top: 0;
-   a:hover {
-    opacity: 0.6;
-  }
-  .title {
-    //  height: 60px;
-    //  margin: 0;
-    //  padding: 0;
-    //  border: white solid 1px;
-  }
-  ul {
-    float: right;
-    margin: 0;
-    li {
-      float: left;
-      list-style: none;
-      line-height: 40px;
-      a {
-        padding: 10px 20px; 
-        display: block;
-        color: white;
-        text-decoration: none;
-        &:hover {
-          background-color: white;
-          color: black;
-        }
+.header {
+  box-sizing: border-box;
+  font-family: 'Noto Serif JP', serif;
+  color: white;
+  letter-spacing: 2px;
+  background-color: black;
+  width: 100vw;
+  height: 60px;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  a:hover {
+  opacity: 0.6;
+}
+ul {
+  float: right;
+  margin: 0;
+  li {
+    float: left;
+    list-style: none;
+    line-height: 40px;
+    a {
+      padding: 10px 20px; 
+      display: block;
+      color: white;
+      text-decoration: none;
+      &:hover {
+        background-color: white;
+        color: black;
       }
-       &:last-child {
-         margin-right: 20px;
-       }
-     }
-   }
- }
- 
- .contents {
-   box-sizing: border-box;
-   font-family: 'Noto Serif JP', serif;
-   color: white;
-   background-image: url("/images/yellowknife.jpeg");
-   background-size: cover;
-   background-attachment: fixed;
-   width: 100vw;
-   height: 100vh;
-   padding: 110px 50px 50px;
-   text-align: right;
-   h1 {
-     font-size: 50px;
-     letter-spacing: 10px;
-     margin-bottom: 70px;
-   }
-   p {
-     line-height: 40px;
-     margin-bottom: 70px;
-     margin-right: 20px;
-     span {
-       font-size: 30px;
-       font-weight: bold;
-     }
-   }
-   a {
-     text-decoration: none;
-     color: white;
-     letter-spacing: 3px;
-     font-weight: bold;
-     border: 2px solid white;
-     border-radius: 50%;
-     padding: 20px;
-     margin-right: 30px;
-     &:hover {
-       background-color: white;
-       opacity: 0.6;
-       color: black;
-     }
-   }
- }
-
- .container {
-   padding: 60px 50px 50px;
-   height: 100%;
-   width: 100%;
-   position: fixed;
- }
-
- .color-white {
-   color: white;
- }
-
- .user-top {
-   display: flex;
-   justify-content: space-around;
-   height: 300px;
-  &__left-name {
-    margin-bottom: 30px;
+    }
+      &:last-child {
+        margin-right: 20px;
+      }
+    }
   }
+}
+
+.about {
+  &__image {
+  width: 100%;
+  text-align: center;
+  }
+  &__text {
+  margin-top: 10px;
+  text-align: center;
+  line-height: 30px;
+  }
+  &__me {
+    margin: 20px 0;
+    text-align: right;
+    &--link {
+      color: white;
+      font-size: 12px;
+      padding: 10px;
+      border: 1px solid white;
+      border-radius: 20px;
+      &:hover {
+        background-color: white;
+        opacity: 0.6;
+        color: black;
+      }
+    }
+  }  
+}
+
+.contents {
+  box-sizing: border-box;
+  font-family: 'Noto Serif JP', serif;
+  color: white;
+  background-image: url("/images/yellowknife.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 110px 50px 50px;
+  text-align: right;
+  h1 {
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-bottom: 70px;
+  }
+  p {
+    line-height: 40px;
+    margin-bottom: 70px;
+    margin-right: 20px;
+    span {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}
+.index a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 3px;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 20px;
+  margin-right: 30px;
+  &:hover {
+    background-color: white;
+    opacity: 0.6;
+    color: black;
+    }
+}
+
+.container {
+  padding: 60px 50px 50px;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.color-white {
+  color: white;
+}
+
+.user-top {
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+&__left-name {
+  margin-bottom: 30px;
+}
 }
 
 .new_dream {
-  margin: 30px 0;
+margin: 30px 0;
 }
 
 .opened {
-  margin: 0 20px;
+margin: 0 20px;
 }
 
 .lists {
-  width: 100%;
-  height: calc(100vh - 350px);
-  padding-bottom: 50px;
-  overflow: scroll;
+width: 100%;
+height: calc(100vh - 350px);
+padding-bottom: 50px;
+overflow: scroll;
 }
 
 .item {
-  cursor: grabbing;
+cursor: grabbing;
 }

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :dreams do
     put :sort
+    get :about, on: :collection
   end
 end
