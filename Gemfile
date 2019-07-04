@@ -70,3 +70,7 @@ gem 'rails-i18n'
 gem 'materialize-sass', '~> 1.0.0'
 gem 'ranked-model'
 gem 'jquery-ui-rails'
+
+gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
