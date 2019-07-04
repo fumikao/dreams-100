@@ -82,6 +82,9 @@ ul {
         opacity: 0.6;
         color: black;
       }
+      &:first-child {
+        margin-right: 10px;
+      }
     }
   }  
 }
@@ -164,7 +167,7 @@ overflow: scroll;
 }
 
 .item {
-cursor: grabbing;
+  cursor: grabbing;
 }
 
 .signup-with-google {
