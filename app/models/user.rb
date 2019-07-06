@@ -6,6 +6,7 @@ class User < ApplicationRecord
         :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_many :dreams, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   protected
 
