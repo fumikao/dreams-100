@@ -5,6 +5,15 @@
   <td>
     <%= dream.content %>
   </td>
+  <td>
+    <% if Like.find_by(user_id: current_user.id, dream_id: dream.id) %>
+      <%= link_to "いいね取り消し", "/dreams/#{dream.id}/likes", method: :delete %>
+      <%= dream.likes.length %>
+    <% else %>
+      <%= link_to "いいねする", "/dreams/#{dream.id}/likes", method: :post %>
+      <%= dream.likes.length %>
+    <% end %>
+  </td>
   <% if user_signed_in? && dream.user == current_user %>
     <td>
       <%= dream.opened %>

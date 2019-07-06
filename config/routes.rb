@@ -7,4 +7,7 @@ Rails.application.routes.draw do
     put :sort
     get :about, on: :collection
   end
+
+  post '/dreams/:dream_id/likes' => "likes#create"
+  delete '/dreams/:dream_id/likes' => "likes#destroy"
 end
