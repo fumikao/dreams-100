@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_06_093521) do
+ActiveRecord::Schema.define(version: 2019_07_06_095335) do
 
   create_table "dreams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content", null: false
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_07_06_093521) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "row_order"
-    t.integer "opened"
+    t.string "opened"
     t.index ["user_id"], name: "index_dreams_on_user_id"
   end
 
