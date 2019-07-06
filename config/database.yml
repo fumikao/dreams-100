@@ -52,3 +52,6 @@ production:
   database: dreams-100_production
   username: dreams-100
   password: <%= ENV['DREAMS-100_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
