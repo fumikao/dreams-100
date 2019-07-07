@@ -10,27 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_06_095335) do
-
-  create_table "dreams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content", null: false
-    t.string "status", default: "0", null: false
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "row_order"
-    t.string "opened"
-    t.index ["user_id"], name: "index_dreams_on_user_id"
-  end
-
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "dream_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["dream_id"], name: "index_likes_on_dream_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2019_07_02_062357) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -45,7 +25,4 @@ ActiveRecord::Schema.define(version: 2019_07_06_095335) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "dreams", "users"
-  add_foreign_key "likes", "dreams"
-  add_foreign_key "likes", "users"
 end
