@@ -15,8 +15,8 @@ class DreamsController < ApplicationController
         format.json
       end
     else
-      flash[:alert] = '送信に失敗しました'
-      render 'users/show'
+      # flash[:alert] = '送信に失敗しました'
+      redirect_to user_path(current_user)
     end
   end
 
