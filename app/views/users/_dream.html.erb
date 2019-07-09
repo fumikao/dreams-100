@@ -1,7 +1,13 @@
 <%= content_tag "tr", id: "dream-#{dream.id}", class: "item", data: { model_name: dream.class.name.underscore, update_url: dream_sort_path(dream)} do %>
-  <td>
-    <%= dream.status %>
-  </td>
+  <% if dream.status == "未実施" %>
+    <td class="status-yet">
+  <% elsif dream.status == "実施中" %>
+    <td class="status-now">
+  <% else %>
+    <td class="status-done">
+  <% end %>
+      <%= dream.status %>
+    </td>
   <td>
     <%= dream.content %>
   </td>

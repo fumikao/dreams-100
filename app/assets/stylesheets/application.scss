@@ -179,3 +179,15 @@ overflow: scroll;
     opacity: 0.7;
   }
 }
+
+.status-done {
+  background: rgba(240, 98, 146, 0.7);
+}
+
+.status-now {
+  background: rgba(165, 214, 167, 0.7);
+}
+
+.status-yet {
+  background: rgba(224, 224, 224, 0.7);
+}
