@@ -1,5 +1,6 @@
 class DreamsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :about]
+  before_action :set_dream, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -15,17 +16,14 @@ class DreamsController < ApplicationController
         format.json
       end
     else
-      # flash[:alert] = '送信に失敗しました'
       redirect_to user_path(current_user)
     end
   end
 
   def edit
-    @dream = Dream.find(params[:id])
   end
 
   def update
-    @dream = Dream.find(params[:id])
     if @dream.update(dream_params)
       redirect_to user_path(current_user)
     else
@@ -34,7 +32,6 @@ class DreamsController < ApplicationController
   end
 
   def destroy
-    @dream = Dream.find(params[:id])
     @dream.destroy
   end
 
@@ -47,5 +44,9 @@ class DreamsController < ApplicationController
   private
   def dream_params
     params.require(:dream).permit(:content, :opened, :status, :row_order_position)
+  end
+
+  def set_dream
+    @dream = Dream.find(params[:id])
   end
 end

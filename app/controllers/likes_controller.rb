@@ -1,12 +1,18 @@
 class LikesController < ApplicationController
+  before_action :authenticate_user!  
+  before_action :set_dream
+
   def create
-    @dream = Dream.find(params[:dream_id])
     @like = Like.create(user_id: current_user.id, dream_id: @dream.id)
   end
   
   def destroy
-    @dream = Dream.find(params[:dream_id])
     @like = Like.find_by(user_id: current_user.id, dream_id: @dream.id)
     @like.destroy
+  end
+
+  private
+  def set_dream
+    @dream = Dream.find(params[:dream_id])
   end
 end
