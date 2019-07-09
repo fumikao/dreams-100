@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :dreams, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+  validates :name, presence: :true
+
   protected
 
   def self.from_omniauth(access_token)
