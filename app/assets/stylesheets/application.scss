@@ -14,11 +14,14 @@
  *= require_self
  */
 
- @import "materialize";
- 
+@import "materialize";
+@import "dream.scss";
+
 body {
   height: 100vh;
 }
+
+// header
 
 .header {
   box-sizing: border-box;
@@ -32,8 +35,10 @@ body {
   z-index: 10;
   top: 0;
   a:hover {
-  opacity: 0.6;
+    opacity: 0.6;
+  }
 }
+
 ul {
   float: right;
   margin: 0;
@@ -47,16 +52,46 @@ ul {
       color: white;
       text-decoration: none;
       &:hover {
-        background-color: white;
+        background: rgba(255, 255, 255, 0.7);
         color: black;
       }
     }
-      &:last-child {
-        margin-right: 20px;
-      }
+    &:last-child {
+      margin-right: 20px;
     }
   }
 }
+
+// home and about
+
+.contents {
+  box-sizing: border-box;
+  font-family: 'Noto Serif JP', serif;
+  color: white;
+  background-image: image-url('yellowknife.jpeg');
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 110px 50px 50px;
+  text-align: right;
+  h1 {
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-bottom: 70px;
+  }
+  p {
+    line-height: 40px;
+    margin-bottom: 70px;
+    margin-right: 20px;
+    span {
+      font-size: 30px;
+      font-weight: bold;
+    }
+  }
+}
+
+// about
 
 .about {
   &__image {
@@ -93,32 +128,6 @@ ul {
   }  
 }
 
-.contents {
-  box-sizing: border-box;
-  font-family: 'Noto Serif JP', serif;
-  color: white;
-  background-image: image-url('yellowknife.jpeg');
-  background-size: cover;
-  background-attachment: fixed;
-  width: 100vw;
-  min-height: 100vh;
-  padding: 110px 50px 50px;
-  text-align: right;
-  h1 {
-    font-size: 50px;
-    letter-spacing: 10px;
-    margin-bottom: 70px;
-  }
-  p {
-    line-height: 40px;
-    margin-bottom: 70px;
-    margin-right: 20px;
-    span {
-      font-size: 30px;
-      font-weight: bold;
-    }
-  }
-}
 .index a {
   text-decoration: none;
   color: white;
@@ -135,6 +144,8 @@ ul {
     }
 }
 
+// other contents
+
 .container {
   padding: 60px 50px 50px;
   height: 100%;
@@ -142,37 +153,7 @@ ul {
   position: fixed;
 }
 
-.color-white {
-  color: white;
-}
-
-.user-top {
-  display: flex;
-  justify-content: space-around;
-  height: 250px;
-  &__right {
-    margin-top: 10px;
-  }
-}
-
-.new_dream {
-margin: 30px 0;
-}
-
-.opened {
-margin: 0 20px;
-}
-
-.lists {
-width: 100%;
-height: calc(100vh - 350px);
-padding-bottom: 50px;
-overflow: scroll;
-}
-
-.item {
-  cursor: grabbing;
-}
+// longin and signup pages
 
 .signup-with-google {
   &:hover {
@@ -180,20 +161,8 @@ overflow: scroll;
   }
 }
 
-.status-done {
-  background: rgba(240, 98, 146, 0.7);
-}
+// user#index
 
-.status-now {
-  background: rgba(165, 214, 167, 0.7);
-}
-
-.status-yet {
-  background: rgba(224, 224, 224, 0.7);
-}
-
-td a {
-  &:hover {
-    opacity: 0.6;
-  }
+td a:hover {
+  opacity: 0.6;
 }

@@ -1,3 +1,39 @@
 // Place all the styles related to the dream controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-top {
+  display: flex;
+  justify-content: space-around;
+  height: 250px;
+  &__right {
+    margin-top: 10px;
+  }
+}
+
+.new_dream {
+  margin: 20px 0;
+}
+
+.lists {
+  width: 100%;
+  height: calc(100vh - 350px);
+  padding-bottom: 50px;
+  overflow: scroll;
+}
+
+.item {
+  cursor: grabbing;
+}
+
+.status-done {
+  background: rgba(240, 98, 146, 0.7);
+}
+
+.status-now {
+  background: rgba(165, 214, 167, 0.7);
+}
+
+.status-yet {
+  background: rgba(224, 224, 224, 0.7);
+}
