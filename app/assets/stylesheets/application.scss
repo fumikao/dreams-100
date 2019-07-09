@@ -191,3 +191,9 @@ overflow: scroll;
 .status-yet {
   background: rgba(224, 224, 224, 0.7);
 }
+
+td a {
+  &:hover {
+    opacity: 0.6;
+  }
+}

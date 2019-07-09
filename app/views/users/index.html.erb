@@ -1,14 +1,23 @@
 <div class="container">
   <h4>ユーザー</h4>
-  <ul class="collection with-header">
-    <% @users.each do |user| %>
-      <li class="collection-item">
-        <%= link_to user_path(user), class: "secondary-content" do %>
-          <i class="material-icons">person</i>
-        <% end %>
-        <%= user.name %> has <%= user.dreams.length %> dreams.
-      </li>
-    <% end %>
-  </ul>
+  <table>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <% if user != current_user %>
+              <%= link_to user_path(user) do %>
+                <i class="material-icons">touch_app</i>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= user.name %></td>
+          <td> has <%= user.dreams.length %> dreams.</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
   <%= paginate(@users) %>
 </div>
