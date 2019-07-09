@@ -8,7 +8,7 @@
             <%= link_to user_path(user) do %>
               <% if user == current_user %>
                 <i class="material-icons">person</i>
-              <% else %>                
+              <% else %>
                 <i class="material-icons">touch_app</i>
               <% end %>
             <% end %>
@@ -19,7 +19,5 @@
       <% end %>
     </tbody>
   </table>
-
-
   <%= paginate(@users) %>
 </div>
