@@ -8,7 +8,7 @@
           <% else %>
             <%= @user.name %>
           <% end %>
-          has <%= @user.dreams.length %> dreams.
+          has <span id="dream-length"><%= @user.dreams.length %></span> dreams.
         </h5>
       </div>
       <div class="user-top__left-form">
