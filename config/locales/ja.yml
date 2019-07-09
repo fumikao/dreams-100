@@ -7,3 +7,5 @@ ja:
         name: 名前
         email: Email
         password: パスワード
+        current_password: 現在のパスワード
+        password_confirmation: パスワード(確認)
