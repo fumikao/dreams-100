@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user == current_user
       @dreams = @user.dreams.rank(:row_order)
     else
-      @dreams = @user.dreams.where(opened: true)
+      @dreams = @user.dreams.where(opened: "1")
     end
     
     @chart = [
