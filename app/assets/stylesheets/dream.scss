@@ -23,18 +23,21 @@
 
 .item {
   cursor: grabbing;
-}
-
-.status-done {
-  background: rgba(240, 98, 146, 0.7);
-}
-
-.status-now {
-  background: rgba(165, 214, 167, 0.7);
-}
-
-.status-yet {
-  background: rgba(224, 224, 224, 0.7);
+  &__status {
+    text-align: center;
+    &--done {
+      background: rgba(240, 98, 146, 0.7);
+    }
+    &--now {
+      background: rgba(165, 214, 167, 0.7);
+    }
+    &--yet {
+      background: rgba(224, 224, 224, 0.7);
+    }
+  }
+  &__content {
+    padding-left: 20px;
+  }
 }
 
 .delete_button {
