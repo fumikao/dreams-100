@@ -18,7 +18,6 @@
 .lists {
   width: 100%;
   height: calc(100vh - 350px);
-  padding-bottom: 50px;
   overflow: scroll;
 }
 
@@ -36,4 +35,9 @@
 
 .status-yet {
   background: rgba(224, 224, 224, 0.7);
+}
+
+.edit_dream {
+  width: 50%;
+  padding-top: 30px;
 }
