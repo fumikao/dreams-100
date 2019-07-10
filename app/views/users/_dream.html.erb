@@ -19,7 +19,27 @@
       <%= dream.opened %>
     </td>
     <td>
-      <%= link_to "編集", "/dreams/#{dream.id}/edit" %>        
+      <%= content_tag "a", "編集", href: "#modal-#{dream.id}", class: "modal-trigger" %>
+      <%= content_tag "div", id: "modal-#{dream.id}", class: "modal" do %>
+        <div class="modal-content">
+          <%= form_for dream, remote: true do |f| %>
+            <div class="form">
+              <%= f.text_field :content, value: dream.content, class: "input-field col s6" %>
+              <%= f.select :status, Dream.statuses.keys, selected: dream.status %>
+              <div>
+                <label>
+                  <%= f.check_box :opened, {}, "公開", "非公開" %>
+                  <span><%= f.label :公開 %></span>
+                </label>
+              </div>
+              <%= f.submit :send, id: "edit_submit", class: "waves-effect waves-light btn-small" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+        </div>
+      <% end %>
       <%= link_to "削除", "/dreams/#{dream.id}", method: :delete, class: "delete_button", remote: true %>
     </td>
   <% end %>
