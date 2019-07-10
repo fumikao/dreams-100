@@ -16,7 +16,7 @@
           <%= form_for @dream do |f| %>
             <div class="form">
               <%= f.text_field :content, placeholder: "What's your dream?", class: "input-field col s6" %>
-              <%= f.select :status, [["未実施", "0"], ["実施中", "1"], ["達成！", "2"]] %>
+              <%= f.select :status, Dream.statuses.keys %>
               <div>
                 <label>
                   <%= f.check_box :opened, {checked: true, checked_value: "1", unchecked_value: "0"} %>
