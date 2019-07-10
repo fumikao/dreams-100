@@ -1,14 +1,14 @@
 <%= content_tag "tr", id: "dream-#{dream.id}", class: "item", data: { model_name: dream.class.name.underscore, update_url: dream_sort_path(dream)} do %>
   <% if dream.status == "未実施" %>
-    <td class="status-yet">
+    <td class="item__status item__status--yet">
   <% elsif dream.status == "実施中" %>
-    <td class="status-now">
+    <td class="item__status item__status--now">
   <% else %>
-    <td class="status-done">
+    <td class="item__status item__status--done">
   <% end %>
       <%= dream.status %>
     </td>
-  <td>
+  <td class="item__content">
     <%= dream.content %>
   </td>
   <%= content_tag "td", id: "like-#{dream.id}" do %>
@@ -19,7 +19,27 @@
       <%= dream.opened %>
     </td>
     <td>
-      <%= link_to "編集", "/dreams/#{dream.id}/edit" %>        
+      <%= content_tag "a", "編集", href: "#modal-#{dream.id}", class: "modal-trigger" %>
+      <%= content_tag "div", id: "modal-#{dream.id}", class: "modal" do %>
+        <div class="modal-content">
+          <%= form_for dream, remote: true do |f| %>
+            <div class="form">
+              <%= f.text_field :content, value: dream.content, class: "input-field col s6" %>
+              <%= f.select :status, Dream.statuses.keys, selected: dream.status %>
+              <div>
+                <label>
+                  <%= f.check_box :opened, {}, "公開", "非公開" %>
+                  <span><%= f.label :公開 %></span>
+                </label>
+              </div>
+              <%= f.submit :send, id: "edit_submit", class: "waves-effect waves-light btn-small" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+        </div>
+      <% end %>
       <%= link_to "削除", "/dreams/#{dream.id}", method: :delete, class: "delete_button", remote: true %>
     </td>
   <% end %>

@@ -18,22 +18,28 @@
 .lists {
   width: 100%;
   height: calc(100vh - 350px);
-  padding-bottom: 50px;
   overflow: scroll;
 }
 
 .item {
   cursor: grabbing;
+  &__status {
+    text-align: center;
+    &--done {
+      background: rgba(240, 98, 146, 0.7);
+    }
+    &--now {
+      background: rgba(165, 214, 167, 0.7);
+    }
+    &--yet {
+      background: rgba(224, 224, 224, 0.7);
+    }
+  }
+  &__content {
+    padding-left: 20px;
+  }
 }
 
-.status-done {
-  background: rgba(240, 98, 146, 0.7);
-}
-
-.status-now {
-  background: rgba(165, 214, 167, 0.7);
-}
-
-.status-yet {
-  background: rgba(224, 224, 224, 0.7);
+.delete_button {
+  margin-left: 5px;
 }

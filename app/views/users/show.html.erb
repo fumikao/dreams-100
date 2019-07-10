@@ -16,7 +16,7 @@
           <%= form_for @dream do |f| %>
             <div class="form">
               <%= f.text_field :content, placeholder: "What's your dream?", class: "input-field col s6" %>
-              <%= f.select :status, [["未実施", "0"], ["実施中", "1"], ["達成！", "2"]] %>
+              <%= f.select :status, Dream.statuses.keys %>
               <div>
                 <label>
                   <%= f.check_box :opened, {checked: true, checked_value: "1", unchecked_value: "0"} %>
@@ -36,17 +36,6 @@
   <div>
     <div class="lists">
       <table class="highlight table-sortable">
-        <thead>
-          <tr>
-            <th>状況</th>
-            <th>内容</th>
-            <th>いいね</th>
-            <% if user_signed_in? && @user == current_user %>
-              <th>公開/非公開</th>
-              <th>only you</th>
-            <% end %>
-          </tr>
-        </thead>
         <tbody id="dreams_list">
           <%= render partial: 'dream', collection: @dreams %>
         </tbody>
