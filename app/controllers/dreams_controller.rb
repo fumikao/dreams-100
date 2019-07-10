@@ -38,7 +38,7 @@ class DreamsController < ApplicationController
   def sort
     dream = Dream.find(params[:dream_id])
     dream.update(dream_params)
-    render nothing: true
+    render body: nil
   end
 
   private
