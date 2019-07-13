@@ -10,6 +10,9 @@
           <% end %>
           has <span id="dream-length"><%= @user.dreams.length %></span> dreams.
         </h5>
+        <% if user_signed_in? && @user == current_user%>
+          <%= link_to "▼ Download my DREAMS(CSV)", dreams_path(format: :csv), class: "waves-effect waves-light lighten-3 btn-small" %>
+        <% end %>
       </div>
       <div class="user-top__left-form">
         <% if @user == current_user %>
@@ -17,20 +20,22 @@
             <div class="form">
               <%= f.text_field :content, placeholder: "What's your dream?", class: "input-field col s6" %>
               <%= f.select :status, Dream.statuses.keys %>
-              <div>
+              <div class="buttons">
                 <label>
                   <%= f.check_box :opened, {checked: true, checked_value: "1", unchecked_value: "0"} %>
                   <span><%= f.label :公開 %></span>
                 </label>
+                <%= f.submit :send, class: "waves-effect waves-light btn-small" %>
               </div>
-              <%= f.submit :send, class: "waves-effect waves-light btn-small" %>
             </div>
           <% end %>
         <% end %>
       </div>
     </div>
     <div class="user-top__right">
-      <%= pie_chart @chart, width: "300px", height: "200px", colors: ["#e0e0e0", "#a5d6a7", "#f06292"] %>
+      <% if @user.dreams.length != 0 %>
+        <%= pie_chart @chart, width: "300px", height: "200px", colors: ["#e0e0e0", "#a5d6a7", "#f06292"] %>
+      <% end %>
     </div>
   </div>
   <div>
