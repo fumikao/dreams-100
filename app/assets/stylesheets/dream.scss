@@ -15,6 +15,12 @@
   margin: 20px 0;
 }
 
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 .lists {
   width: 100%;
   height: calc(100vh - 350px);
