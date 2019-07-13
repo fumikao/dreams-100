@@ -3,10 +3,12 @@ class DreamsController < ApplicationController
   before_action :set_dream, only: [:edit, :update, :destroy]
 
   def index
-    @dreams = Dream.where(user_id: current_user.id)
-    respond_to do |format|
-      format.html
-      format.csv { send_data render_to_string, filename: "dreams.csv", type: :csv}
+    if user_signed_in?
+      @dreams = Dream.where(user_id: current_user.id)
+      respond_to do |format|
+        format.html
+        format.csv { send_data render_to_string, filename: "dreams.csv", type: :csv}
+      end
     end
   end
 
