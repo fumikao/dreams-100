@@ -11,9 +11,9 @@
   <td class="item__content">
     <%= dream.content %>
   </td>
-  <%= content_tag "td", id: "like-#{dream.id}" do %>
+  <td id="like-<%= dream.id %>">
     <%= render partial: "like", locals: { dream: dream } %>
-  <% end %>
+  </td>
   <% if user_signed_in? && dream.user == current_user %>
     <td>
       <%= dream.opened %>

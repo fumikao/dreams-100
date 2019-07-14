@@ -2,10 +2,9 @@
   <%= link_to "/dreams/#{dream.id}/likes", method: :delete, remote: true do %>
     <i class="material-icons">star</i>
   <% end %>
-  <%= dream.likes.length %>
 <% else %>
   <%= link_to "/dreams/#{dream.id}/likes", method: :post, remote: true do %>
     <i class="material-icons">star_border</i>
     <% end %>
-  <%= dream.likes.length %>
 <% end %>
+<%= dream.likes.length %>
