@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @dream = Dream.new
     if @user == current_user
-      @dreams = @user.dreams.rank(:row_order)
+      @dreams = @user.dreams.includes(:likes).rank(:row_order)
     else
       @dreams = @user.dreams.where(opened: "1")
     end
