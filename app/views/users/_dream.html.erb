@@ -19,8 +19,8 @@
       <%= dream.opened %>
     </td>
     <td>
-      <%= content_tag "a", "編集", href: "#modal-#{dream.id}", class: "modal-trigger" %>
-      <%= content_tag "div", id: "modal-#{dream.id}", class: "modal" do %>
+      <a href="#modal-<%= dream.id %>" class="modal-trigger">編集</a>
+      <div id="modal-<%= dream.id %>" class="modal">
         <div class="modal-content">
           <%= form_for dream, remote: true do |f| %>
             <div class="form">
@@ -39,7 +39,7 @@
         <div class="modal-footer">
           <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
         </div>
-      <% end %>
+      </div>
       <%= link_to "削除", "/dreams/#{dream.id}", method: :delete, class: "delete_button", remote: true %>
     </td>
   <% end %>
