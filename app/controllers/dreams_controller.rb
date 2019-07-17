@@ -47,12 +47,7 @@ class DreamsController < ApplicationController
     dream.update(dream_params)
     render body: nil
   end
-
-  # def csv_output
-  #   @dreams = Dream.where(user_id: current_user.id)
-  #   send_data render_to_string, filename: "dreams.csv", type: :csv
-  # end
-
+  
   private
   def dream_params
     params.require(:dream).permit(:content, :opened, :status, :row_order_position)
