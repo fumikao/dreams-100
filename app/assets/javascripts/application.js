@@ -17,4 +17,5 @@
 //= require Chart.bundle
 //= require chartkick
 //= require jquery-ui/widgets/sortable
+//= require jquery-ui/effects/effect-highlight
 //= require_tree .
