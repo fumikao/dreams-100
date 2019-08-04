@@ -1,7 +1,16 @@
 <div class="contents">
   <div class="about">
-    <div class="about__image">
-      <%= image_tag "about-image.png", size: "400x300" %>
+    <div class="top">
+      <div class="top__title">
+        <h1>WE HAVE  <br>100 DREAMS.</h1>
+        <div>
+          <%= link_to "みんなの夢を見る", users_path, class: "about__me--link" %>
+          <%= link_to "JOIN!", new_user_registration_path, class: "about__me--link join"%>
+        </div>
+      </div>
+      <div class="top__image">
+        <%= image_tag "about-image.png", size: "400x300" %>
+      </div>
     </div>
     <div class="about__text">
       やりたいことを100個書き出してみましょう。<div>
@@ -11,7 +20,6 @@
       みんなで共有して、いいなと思ったら★で応援しましょう！
     </div>
     <div class="about__me">
-      <%= link_to "TOPへ", root_path, class: "about__me--link" %>
       <%= link_to "管理者のページ", "https://fumika-portfolio.firebaseapp.com/", target: :_blank, class: "about__me--link" %>
     </div>
   </div>
