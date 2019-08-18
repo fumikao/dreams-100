@@ -1,14 +1,12 @@
 class DreamsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :about]
-  before_action :set_dream, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:about]
+  before_action :set_dream, only: [:edit, :update, :destroy, :sort]
 
   def index
-    if user_signed_in?
-      @dreams = Dream.where(user_id: current_user.id)
-      respond_to do |format|
-        format.html
-        format.csv { send_data render_to_string, filename: "dreams.csv", type: :csv}
-      end
+    @dreams = Dream.where(user_id: current_user.id)
+    respond_to do |format|
+      format.html
+      format.csv { send_data render_to_string, filename: "dreams.csv", type: :csv}
     end
   end
 
@@ -43,8 +41,7 @@ class DreamsController < ApplicationController
   end
 
   def sort
-    dream = Dream.find(params[:dream_id])
-    dream.update(dream_params)
+    @dream.update(dream_params)
     render body: nil
   end
   
