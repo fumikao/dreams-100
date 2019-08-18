@@ -37,30 +37,30 @@ body {
   a:hover {
     opacity: 0.6;
   }
-}
-
-ul {
-  float: right;
-  margin: 0;
-  li {
-    float: left;
-    list-style: none;
-    line-height: 40px;
-    a {
-      padding: 10px 20px; 
-      display: block;
-      color: white;
-      text-decoration: none;
-      &:hover {
-        background: white;
-        color: black;
+  ul {
+    float: right;
+    margin: 0;
+    li {
+      float: left;
+      list-style: none;
+      line-height: 40px;
+      a {
+        padding: 10px 20px; 
+        display: block;
+        color: white;
+        text-decoration: none;
+        &:hover {
+          background: white;
+          color: black;
+        }
       }
-    }
-    &:last-child {
-      margin-right: 20px;
+      &:last-child {
+        margin-right: 20px;
+      }
     }
   }
 }
+
 
 // about
 
